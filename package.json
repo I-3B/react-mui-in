@@ -1,0 +1,11 @@
+{
+  "name": "react-mui-in",
+  "version": "0.0.18",
+  "type": "module",
+  "repository": "git@github.com:I-3B/react-mui-in.git",
+  "author": "Islam Naasani <islamnaasani@gmail.com>",
+  "license": "MIT",
+  "bin": {
+    "create-boilerplate": "bin/generate.js"
+  }
+}
