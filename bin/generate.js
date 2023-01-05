@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const { execSync } = require("child_process");
+const { execSync, exec } = require("child_process");
 const path = require("path");
 const fs = require("fs");
 
@@ -64,13 +64,13 @@ async function main() {
   try {
     console.log("Cloning git repository...");
     execSync(`git clone --depth 1 ${gitRepo} ${projectPath}`), { stdio: "inherit" };
-
     process.chdir(projectPath);
+    fs.renameSync(`${projectPath}/source/*`, `${projectPath}/`);
 
     console.log("Generating package.json...");
 
-    execSync(`npx add-dependencies ${dependencies.join(" ")}`, { stdio: "inherit" });
-    execSync(`npx add-dependencies ${devDependencies.join(" ")} --dev`, { stdio: "inherit" });
+    exec(`npx add-dependencies ${dependencies.join(" ")}`, { stdio: "inherit" });
+    exec(`npx add-dependencies ${devDependencies.join(" ")} --dev`, { stdio: "inherit" });
 
     // console.log("Removing useless files");
     // execSync("npx rimraf ./.git");
