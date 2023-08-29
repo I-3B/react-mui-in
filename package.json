@@ -1,7 +1,6 @@
 {
-  "name": "react-mui-in",
-  "version": "0.0.194",
-  "repository": "git@github.com:I-3B/react-mui-in.git",
+  "name": "@islam-naasani/react-mui",
+  "version": "0.0.2",
   "author": "Islam Naasani <islamnaasani@gmail.com>",
   "license": "MIT",
   "bin": {
